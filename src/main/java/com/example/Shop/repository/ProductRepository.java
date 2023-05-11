@@ -10,12 +10,11 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    Product findByProductId(String productId);
-    List<Product> findAllByOrderByNameAsc();
-    List<Product> findAllByOrderByPriceAsc();
-//    List<Product> findByQuantityGreaterThanEqualOrderByExpiresInAsc(int quantity);
-    List<Product> findByNameContainingIgnoreCase(String name);
-    List<Product> findByPriceBetweenOrderByPriceAsc(BigDecimal minPrice, BigDecimal maxPrice);
-//    List<Product> findByQuantityGreaterThanEqualOrderByQuantityAsc(int quantity);
+//    Product findByProductId(String productId);
+//    List<Product> findAllByOrderByNameAsc();
+//    List<Product> findAllByOrderByPriceAsc();
+//    List<Product> findByNameContainingIgnoreCase(String name);
+//    List<Product> findByPriceBetweenOrderByPriceAsc(BigDecimal minPrice, BigDecimal maxPrice);
     List<Product> findByType(String type);
+    List<Product> findByName(String name);
 }

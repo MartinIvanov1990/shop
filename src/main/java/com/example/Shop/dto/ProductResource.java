@@ -1,26 +1,18 @@
-package com.example.Shop.model;
+package com.example.Shop.dto;
 
-
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
-
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "product")
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+public class ProductResource {
 
     private String name;
 
@@ -36,6 +28,4 @@ public class Product {
 
     private String description;
 
-    @ManyToMany (mappedBy = "products")
-    private List<ShoppingBasket> shoppingBasket;
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Всички продукти:</title>
+</head>
+<body>
+<h1 align="center">Всички продукти:</h1>
+<details>
+    <summary>Храни</summary>
+    <ul th:each="food : ${foods}">
+        <li th:text="${food.name}"></li>
+        <li th:text="${food.color}"></li>
+        <li th:text="${food.price}"></li>
+        <li th:text="${food.quantity}"></li>
+        <li th:text="${food.description}"></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Напитки</summary>
+    <ul th:each="drink : ${drinks}">
+        <li th:text="${drink.name}"></li>
+        <li th:text="${drink.color}"></li>
+        <li th:text="${drink.price}"></li>
+        <li th:text="${drink.quantity}"></li>
+        <li th:text="${drink.description}"></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Санитарни</summary>
+    <ul th:each="sanitary : ${sanitary}">
+        <li th:text="${sanitary.name}"></li>
+        <li th:text="${sanitary.color}"></li>
+        <li th:text="${sanitary.price}"></li>
+        <li th:text="${sanitary.quantity}"></li>
+        <li th:text="${sanitary.description}"></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Гримове</summary>
+    <ul th:each="makeup : ${makeups}">
+        <li th:text="${makeup.name}"></li>
+        <li th:text="${makeup.color}"></li>
+        <li th:text="${makeup.price}"></li>
+        <li th:text="${makeup.quantity}"></li>
+        <li th:text="${makeup.description}"></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Аксесоари</summary>
+    <ul th:each="accessory : ${accessories}">
+        <li th:text="${Accessory.name}"></li>
+        <li th:text="${Accessory.color}"></li>
+        <li th:text="${Accessory.price}"></li>
+        <li th:text="${Accessory.quantity}"></li>
+        <li th:text="${Accessory.description}"></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Декорация</summary>
+    <ul th:each="decoration : ${decorations}">
+        <li th:text="${decoration.name}"></li>
+        <li th:text="${decoration.color}"></li>
+        <li th:text="${decoration.price}"></li>
+        <li th:text="${decoration.quantity}"></li>
+        <li th:text="${decoration.description}"></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Други</summary>
+    <ul th:each="other : ${others}">
+        <li th:text="${other.name}"></li>
+        <li th:text="${other.color}"></li>
+        <li th:text="${other.price}"></li>
+        <li th:text="${other.quantity}"></li>
+        <li th:text="${other.description}"></li>
+    </ul>
+</details>
+</body>
+</html>

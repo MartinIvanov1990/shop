@@ -16,4 +16,5 @@ public class RegisterResource {
     private Integer age;
     private Double salary;
     private String password;
+    private String username;
     }

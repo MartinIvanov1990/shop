@@ -11,86 +11,20 @@
     </style>
 </head>
 <body>
-<h1>Добре дошли в супермаркет Лудогорец</h1>
+<h1 align="center">Добре дошли в супермаркет Лудогорец!</h1>
+<h2></h2>
+<h2 align="center">Влез като:</h2>
+<div align="center">
+    <a th:href="@{/menu/customer}"><button type="button" class="btn btn-primary">Клиент</button></a>
+    <a th:href="@{/menu/employee}"><button type="button" class="btn btn-primary">Служител</button></a>
+</div>
+<!--<div  th:if="${customer.roleId == 1}">-->
 
-<!--<img src="/images/eagle.jpg" alt="My Photo" width="3000"  />-->
+<!--&lt;!&ndash;    <a th:href="@{/home(param1='value1',param2='value2')}">&ndash;&gt;-->
 
-<details>
-    <summary>Храни (food)</summary>
-    <ul th:each="food : ${foods}">
-        <li th:text="${food.name}"></li>
-        <li th:text="${food.color}"></li>
-        <li th:text="${food.price}"></li>
-        <li th:text="${food.quantity}"></li>
-        <li th:text="${food.description}"></li>
-    </ul>
-</details>
-
-<details>
-    <summary>Напитки (drinks)</summary>
-    <ul th:each="drink : ${drinks}">
-        <li th:text="${drink.name}"></li>
-        <li th:text="${drink.color}"></li>
-        <li th:text="${drink.price}"></li>
-        <li th:text="${drink.quantity}"></li>
-        <li th:text="${drink.description}"></li>
-    </ul>
-</details>
-
-<details>
-    <summary>Санитарни (sanitary)</summary>
-    <ul th:each="sanitary : ${sanitary}">
-        <li th:text="${sanitary.name}"></li>
-        <li th:text="${sanitary.color}"></li>
-        <li th:text="${sanitary.price}"></li>
-        <li th:text="${sanitary.quantity}"></li>
-        <li th:text="${sanitary.description}"></li>
-    </ul>
-</details>
-
-<details>
-    <summary>Грим (makeup)</summary>
-    <ul th:each="makeup : ${makeups}">
-        <li th:text="${makeup.name}"></li>
-        <li th:text="${makeup.color}"></li>
-        <li th:text="${makeup.price}"></li>
-        <li th:text="${makeup.quantity}"></li>
-        <li th:text="${makeup.description}"></li>
-    </ul>
-</details>
-
-<details>
-    <summary>Аксесоари</summary>
-    <ul th:each="Accessory : ${Accessories}">
-        <li th:text="${Accessory.name}"></li>
-        <li th:text="${Accessory.color}"></li>
-        <li th:text="${Accessory.price}"></li>
-        <li th:text="${Accessory.quantity}"></li>
-        <li th:text="${Accessory.description}"></li>
-    </ul>
-</details>
-
-<details>
-    <summary>декорация</summary>
-    <ul th:each="decoration : ${decorations}">
-        <li th:text="${decoration.name}"></li>
-        <li th:text="${decoration.color}"></li>
-        <li th:text="${decoration.price}"></li>
-        <li th:text="${decoration.quantity}"></li>
-        <li th:text="${decoration.description}"></li>
-    </ul>
-</details>
-
-<details>
-    <summary> други (others)</summary>
-    <ul th:each="other : ${others}">
-        <li th:text="${other.name}"></li>
-        <li th:text="${other.color}"></li>
-        <li th:text="${other.price}"></li>
-        <li th:text="${other.quantity}"></li>
-        <li th:text="${other.description}"></li>
-    </ul>
-</details>
-<p class="mt-3">Do you want to log out? <a th:href="@{/authentication/login}"><button type="button" class="btn btn-primary">Log out</button></a></p>
+<!--</div>-->
+<form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+    <input type="submit" value="Logout" />
+</form>
 </body>
 </html>

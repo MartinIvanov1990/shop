@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">Търсене на продукт по име:</h1>
+<form th:action="@{/customer/products/name}" method="post">
+    <div class="form-group" align="center">
+        <label>Име</label>
+        <input type="text" th:name="name"/>
+        <button type="submit" class="btn btn-primary">Търси</button>
+    </div>
+    <div th:if="${isAvailable == true}">
+        <details>
+            <summary>Продукт</summary>
+            <ul th:each="product : ${products}">
+                <li th:text="${product.name}"></li>
+                <li th:text="${product.color}"></li>
+                <li th:text="${product.price}"></li>
+                <li th:text="${product.quantity}"></li>
+                <li th:text="${product.description}"></li>
+            </ul>
+        </details>
+    </div>
+</form>
+</body>
+</html>

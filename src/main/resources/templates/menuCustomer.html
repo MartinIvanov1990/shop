@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню:</title>
+</head>
+<body>
+<h1 align="center">Меню:</h1>
+<div align="center">
+    <a th:href="@{'/customer/products'}"><button style="background:#3630a3;color:white;" type="button" class="btn btn-primary">Принтиране на всички продукти</button></a>
+    <a th:href="@{'/customer/products/category'}"><button style="background:#3630a3;color:white;" type="button" class="btn btn-primary">Търсене на продукт по категория</button></a>
+    <a th:href="@{'/customer/products/name'}"><button style="background:#3630a3;color:white;" type="button" class="btn btn-primary">Търсене на продукт по име</button></a>
+    <a th:href="@{'/customer/product'}"><button style="background:#3630a3;color:white;" type="button" class="btn btn-primary">Добави продукт в кошницата</button></a>
+    <a th:href="@{'/customer/products/price'}"><button style="background:#3630a3;color:white;" type="button" class="btn btn-primary">Калкулиране</button></a>
+
+</div>
+<br> <a th:href="@{'/home'}"><button style="background:#ff0000;color:white;" type="button"class="btn btn-primary">Назад</button></a></br>
+</body>
+</html>

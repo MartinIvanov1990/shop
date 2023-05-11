@@ -1,58 +1,43 @@
 package com.example.Shop.service;
 
-import com.example.Shop.assemblers.EmployeeAssembler;
-import com.example.Shop.dto.RegisterResource;
 import com.example.Shop.model.Employee;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import com.example.Shop.repository.EmployeeRepository;
+import com.example.Shop.model.Product;
 
 import java.util.List;
-import java.util.Optional;
 
-@Service
-@RequiredArgsConstructor
-public class EmployeeService {
+public interface EmployeeService {
 
-    private final EmployeeRepository employeeRepository;
-    private final EmployeeAssembler employeeAssembler;
+    void printAllProducts(List<Product> products);
 
+    void printAllProductsSortedByName(List<Product> products);
 
-    public void register(RegisterResource resource) {
-        Employee employee = employeeAssembler.registerResourceToEmployee(resource);
-        employeeRepository.save(employee);
-    }
+    void printAllProductsSortedByPrice(List<Product> products);
 
-    public Optional<Employee> findById(Long employeeId) {
-        return employeeRepository.findById(employeeId);
-    }
+    void printAllProductsSortedByExpiresIn(List<Product> products);
 
-//    public List<Employee> findAll() {
-//        return employeeRepository.findAll();
-//    }
+    void printProduct(List<Product> products, int id, String productName);
 
-//    public List<Employee> findAllByOrderByFirstNameAsc() {
-//        return employeeRepository.findAllByOrderByFirstNameAsc();
-//    }
-//
-//    public List<Employee> findAllByOrderBySalaryAsc() {
-//        return employeeRepository.findAllByOrderBySalaryAsc();
-//    }
+    void printAllProductsWithPriceHigherThanCurrent(List<Product> products, Double price);
 
-    public void deleteEmployee(Long employeeId) {
-        employeeRepository.deleteById(employeeId);
-    }
+    void printAllProductsWithPriceLowerThanCurrent(List<Product> products, Double price);
 
-    public Employee update(Long employeeId, Employee updatedEmployee) {
-        return employeeRepository.findById(employeeId).map(employee -> {
-            employee.setFirstName(updatedEmployee.getFirstName());
-            employee.setLastName(updatedEmployee.getLastName());
-            employee.setAge(updatedEmployee.getAge());
-            employee.setSalary(updatedEmployee.getSalary());
-            return employeeRepository.save(employee);
-        }).orElseThrow(() -> new RuntimeException("Employee with id " + employeeId + " not found."));
-    }
+    void printAllProductsWithQuantityHigherThanCurrent(List<Product> products, Integer quantity);
 
+    void printAllProductsWithQuantityLowerThanCurrent(List<Product> products, Integer quantity);
 
+    void addProduct(List<Product> products, Product product);
 
+    void changeProductPrice(List<Product> products, int productId, double price);
+
+    void changeProductQuantity(List<Product> products, int productId, int quantity);
+
+    void changeProductName(List<Product> products, int productId, String name);
+
+    void removeProduct(List<Product> products, int productId);
+
+    void printEmployeesSortedByName(List<Employee> employees);
+
+    void printEmployeesSortedBySalary(List<Employee> employees);
+
+    void printMenu();
 }

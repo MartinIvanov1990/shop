@@ -1,7 +1,19 @@
 package com.example.Shop.model;
 
-public enum Role {
+import lombok.Getter;
+import lombok.Setter;
 
-    ADMIN,USER
+import javax.persistence.*;
 
+@Entity
+@Table(name = "roles")
+@Getter
+@Setter
+public class Role {
+    @Id
+    @Column(name = "role_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long roleId;
+
+    private String name;
 }

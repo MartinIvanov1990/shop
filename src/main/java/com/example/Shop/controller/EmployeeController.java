@@ -1,20 +1,15 @@
 package com.example.Shop.controller;
 
-
-import com.example.Shop.model.Employee;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import com.example.Shop.service.EmployeeService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeService employeeService;
-
+//    @Autowired
+//    private EmployeeService employeeService;
+//
 //    @GetMapping
 //    public List<Employee> getAllEmployees() {
 //        return employeeService.findAll();
@@ -38,18 +33,18 @@ public class EmployeeController {
 //    }
 
 
-    @GetMapping("/{employeeId}")
-    public Employee getEmployeeById(@PathVariable Long employeeId) {
-        return employeeService.findById(employeeId).orElse(null);
+    @GetMapping
+    public String getEmployeeById(Model model) {
+        return "employee";
     }
-
-    @PutMapping("/{employeeId}")
-    public Employee updateEmployee(@PathVariable Long employeeId, @RequestBody Employee employeeDetails) {
-        return employeeService.update(employeeId, employeeDetails);
-    }
-
-    @DeleteMapping("/{employeeId}")
-    public void deleteEmployee(@PathVariable Long employeeId) {
-        employeeService.deleteEmployee(employeeId);
-    }
+//
+//    @PutMapping("/{employeeId}")
+//    public Employee updateEmployee(@PathVariable Long employeeId, @RequestBody Employee employeeDetails) {
+//        return employeeService.update(employeeId, employeeDetails);
+//    }
+//
+//    @DeleteMapping("/{employeeId}")
+//    public void deleteEmployee(@PathVariable Long employeeId) {
+//        employeeService.deleteEmployee(employeeId);
+//    }
 }

@@ -19,6 +19,7 @@ public class EmployeeAssembler {
         employee.setPassword(passwordEncoder.encode(resource.getPassword()));
         employee.setSalary(resource.getSalary());
         employee.setAge(resource.getAge());
+        employee.setUsername(resource.getUsername());
         return employee;
     }
 }
